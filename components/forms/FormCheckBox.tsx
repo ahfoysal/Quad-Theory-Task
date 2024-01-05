@@ -20,7 +20,7 @@ type ISelect = {
   defaultValue?: string;
 };
 
-const FormSelect = ({
+const FormCheckBox = ({
   name,
   defaultValue,
   size,
@@ -67,4 +67,4 @@ const FormSelect = ({
   );
 };
 
-export default FormSelect;
+export default FormCheckBox;

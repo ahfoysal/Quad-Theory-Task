@@ -14,13 +14,16 @@ import Form from "../forms/Form";
 import { SubmitHandler } from "react-hook-form";
 import FormInput from "../forms/FormInput";
 import FormTextArea from "../forms/FormTextArea";
+import FormCheckBox from "../forms/FormCheckBox";
 type FormValues = {
   email: string;
   password: string;
 };
 export default function AddItem() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  const onSubmit: SubmitHandler<FormValues> = async (data: any) => {};
+  const onSubmit: SubmitHandler<FormValues> = async (data: any) => {
+    console.log(data);
+  };
   return (
     <>
       <Button
@@ -35,33 +38,38 @@ export default function AddItem() {
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-1">
-                Add Item
-              </ModalHeader>
-              <ModalBody>
-                <Form
-                  submitHandler={onSubmit as SubmitHandler<any>}
-                  //   resolver={yupResolver(LoginSchema)}
-                >
+              <Form
+                submitHandler={onSubmit as SubmitHandler<any>}
+                resolver={yupResolver(LoginSchema)}
+              >
+                <ModalHeader className="flex flex-col gap-1">
+                  Add Item
+                </ModalHeader>
+                <ModalBody>
                   <div className="flex flex-col gap-4">
                     <FormInput label="Name" type="text" name="name" />
                     <FormInput label="Price" type="number" name="price" />
                     <FormTextArea label="Description" name="description" />
+                    <FormCheckBox label="Is Popular?" name="isPopular" />
+                    <FormCheckBox
+                      label="Is Recommended?"
+                      name="isRecommended"
+                    />
                   </div>
-                </Form>
-              </ModalBody>
-              <ModalFooter>
-                <Button color="danger" variant="flat" onPress={onClose}>
-                  Cancel
-                </Button>
-                <Button
-                  variant="solid"
-                  className="bg-orange text-white"
-                  onPress={onClose}
-                >
-                  Add
-                </Button>
-              </ModalFooter>
+                </ModalBody>
+                <ModalFooter>
+                  <Button color="danger" variant="flat" onPress={onClose}>
+                    Cancel
+                  </Button>
+                  <Button
+                    variant="solid"
+                    className="bg-orange text-white"
+                    type="submit"
+                  >
+                    Add
+                  </Button>
+                </ModalFooter>
+              </Form>
             </>
           )}
         </ModalContent>
