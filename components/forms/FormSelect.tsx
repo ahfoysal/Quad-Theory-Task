@@ -1,7 +1,7 @@
 "use client";
 
 import { getErrorMessageByPropertyName } from "@/utils/SchemaValidator";
-import { Input, Select, Typography } from "antd";
+// import { Input, Select, Typography } from "antd";
 import { Controller, useFormContext } from "react-hook-form";
 
 type IOptions = {
@@ -38,7 +38,7 @@ const FormSelect = ({
 
   return (
     <>
-      {label && <Typography.Title level={5}>{label}</Typography.Title>}
+      {/* {label && <Typography.Title level={5}>{label}</Typography.Title>}
       <Controller
         control={control}
         defaultValue={defaultValue || ""}
@@ -59,7 +59,7 @@ const FormSelect = ({
         <Typography.Paragraph type="danger">
           {errorMessage}
         </Typography.Paragraph>
-      )}
+      )} */}
     </>
   );
 };

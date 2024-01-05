@@ -1,14 +1,13 @@
 "use client";
 
 import { getErrorMessageByPropertyName } from "@/utils/SchemaValidator";
-import { Input, Typography } from "antd";
-import TextArea from "antd/es/input/TextArea";
+import { Textarea } from "@nextui-org/input";
 import { Controller, useFormContext } from "react-hook-form";
 
 interface IInput {
   name: string;
   label?: string;
-  size?: "large" | "small";
+  size?: "lg" | "md";
   value?: string | number | string[] | undefined;
   placeholder?: string;
   validation?: object;
@@ -33,25 +32,24 @@ const FormTextArea = ({
 
   return (
     <>
-      {label && <Typography.Title level={5}>{label}</Typography.Title>}
       <Controller
         control={control}
         name={name}
         render={({ field }) => (
-          <TextArea
+          <Textarea
             size={size}
-            status={errorMessage ? "error" : ""}
+            errorMessage={errorMessage ? errorMessage : ""}
             placeholder={placeholder}
             {...field}
             value={value ? value : field.value}
           />
         )}
       />
-      {errorMessage && (
+      {/* {errorMessage && (
         <Typography.Paragraph type="danger">
           {errorMessage}
         </Typography.Paragraph>
-      )}
+      )} */}
     </>
   );
 };

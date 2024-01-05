@@ -1,14 +1,14 @@
 "use client";
 
 import { getErrorMessageByPropertyName } from "@/utils/SchemaValidator";
-import { Input, Typography } from "antd";
+import { Input } from "@nextui-org/input";
 import { Controller, useFormContext } from "react-hook-form";
 
 interface IInput {
   name: string;
   type?: string;
   label?: string;
-  size?: "large" | "small";
+  size?: "sm" | "md" | "lg";
   value?: string | number | string[] | undefined;
   placeholder?: string;
   validation?: object;
@@ -34,37 +34,26 @@ const FormInput = ({
 
   return (
     <>
-      {label && <Typography.Title level={5}>{label}</Typography.Title>}
       <Controller
         control={control}
         name={name}
-        render={({ field }) =>
-          type === "password" ? (
-            <Input.Password
-              type={type}
-              status={errorMessage ? "error" : ""}
-              size={size}
-              placeholder={placeholder}
-              {...field}
-              value={value ? value : field.value}
-            />
-          ) : (
-            <Input
-              type={type}
-              status={errorMessage ? "error" : ""}
-              size={size}
-              placeholder={placeholder}
-              {...field}
-              value={value ? value : field.value}
-            />
-          )
-        }
+        render={({ field }) => (
+          <Input
+            type={type}
+            label={label}
+            errorMessage={errorMessage ? errorMessage : ""}
+            size={size}
+            placeholder={placeholder}
+            {...field}
+            value={value ? value : field.value}
+          />
+        )}
       />
-      {errorMessage && (
+      {/* {errorMessage && (
         <Typography.Paragraph type="danger">
           {errorMessage}
         </Typography.Paragraph>
-      )}
+      )} */}
     </>
   );
 };
