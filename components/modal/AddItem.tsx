@@ -31,7 +31,7 @@ export default function AddItem() {
     <>
       <Button
         variant="flat"
-        className="bg-transparent text-orange"
+        className="bg-transparent text-orange hidden md:flex"
         onPress={onOpen}
         color="primary"
       >

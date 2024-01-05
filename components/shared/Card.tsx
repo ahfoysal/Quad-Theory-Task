@@ -17,7 +17,7 @@ const CardItem = ({ item }: { item: any }) => {
           width="100%"
           isZoomed
           alt={item.Name}
-          className="w-full object-cover h-[300px]"
+          className="w-full object-cover h-[200px] md:h-[300px]"
           src={item.ImageUrl}
         />
       </CardBody>

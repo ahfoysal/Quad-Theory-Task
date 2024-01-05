@@ -39,8 +39,8 @@ const CardSlider = ({
 
   return (
     <div className="flex flex-col  text-center justify-around ">
-      <div className="flex mt-3 w-full justify-between">
-        <h1 className="text-xl  font-medium  text-center md:text-left">
+      <div className="flex mt-3 w-full justify-between items-center">
+        <h1 className="text-base md:text-xl  font-medium  text-center md:text-left">
           {title}
         </h1>
         <div className=" md:my-0  gap-0 flex ">
@@ -73,12 +73,28 @@ const CardSlider = ({
         {!isLoading ? (
           <SwiperReact
             ref={swiperRef as any}
-            slidesPerView={5}
             speed={500}
             spaceBetween={20}
             navigation={{
               nextEl: ".swiper-button-next",
               prevEl: ".swiper-button-prev",
+            }}
+            breakpoints={{
+              300: {
+                slidesPerView: 1.5,
+              },
+              499: {
+                slidesPerView: 2.3,
+              },
+              767: {
+                slidesPerView: 3,
+              },
+              1023: {
+                slidesPerView: 4,
+              },
+              1200: {
+                slidesPerView: 5,
+              },
             }}
             autoplay={{
               delay: 3000,
