@@ -40,6 +40,7 @@ const FormTextArea = ({
             size={size}
             errorMessage={errorMessage ? errorMessage : ""}
             placeholder={placeholder}
+            label={label}
             {...field}
             value={value ? value : field.value}
           />

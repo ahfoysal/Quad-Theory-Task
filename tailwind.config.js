@@ -15,10 +15,7 @@ module.exports = {
         "orange-light": "#F99F1C",
         "light-50": "#ECCFA3",
       },
-      danger: {
-        DEFAULT: "#ECCFA3",
-        foreground: "#000000",
-      },
+      danger: "#F99F1C",
     },
     fontFamily: {
       arlon: ["var(--arlon)"],

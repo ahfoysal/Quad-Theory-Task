@@ -10,6 +10,8 @@ import { Button } from "@nextui-org/button";
 import Loading from "@/app/loading";
 import CardItem from "./shared/Card";
 import { Skeleton } from "@nextui-org/skeleton";
+import { useDisclosure } from "@nextui-org/modal";
+import AddItem from "./modal/AddItem";
 
 const CardSlider = ({
   isLoading,
@@ -32,9 +34,9 @@ const CardSlider = ({
     swiperRef.current?.slidePrev();
     forceUpdate();
   };
-  // if (isLoading) {
-  //   return <Loading />;
-  // }
+
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
   return (
     <div className="flex flex-col  text-center justify-around ">
       <div className="flex mt-3 w-full justify-between">
@@ -42,6 +44,7 @@ const CardSlider = ({
           {title}
         </h1>
         <div className=" md:my-0  gap-0 flex ">
+          <AddItem />
           <Button
             variant="flat"
             isIconOnly
@@ -102,7 +105,7 @@ const renderSkeletons = () => {
   return Array.from({ length: 5 }, (_, index) => (
     <div key={index} className="w-full">
       <Skeleton className="rounded-lg">
-        <div className="h-56 rounded-lg bg-default-300"></div>
+        <div className="h-[300px] rounded-lg bg-default-300"></div>
       </Skeleton>
     </div>
   ));
