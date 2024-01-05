@@ -9,6 +9,7 @@ import ChevronRight from "@/asstets/ChevronRightIcon";
 import { Button } from "@nextui-org/button";
 import Loading from "@/app/loading";
 import CardItem from "./shared/Card";
+import { Skeleton } from "@nextui-org/skeleton";
 
 const CardSlider = ({
   isLoading,
@@ -31,10 +32,9 @@ const CardSlider = ({
     swiperRef.current?.slidePrev();
     forceUpdate();
   };
-
-  if (isLoading) {
-    return <Loading />;
-  }
+  // if (isLoading) {
+  //   return <Loading />;
+  // }
   return (
     <div className="flex flex-col  text-center justify-around ">
       <div className="flex mt-3 w-full justify-between">
@@ -67,30 +67,43 @@ const CardSlider = ({
         </div>
       </div>
       <div className="mt-2">
-        <SwiperReact
-          ref={swiperRef as any}
-          slidesPerView={5}
-          speed={500}
-          spaceBetween={20}
-          navigation={{
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          }}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: true,
-          }}
-          onSwiper={(swiper) => (swiperRef.current = swiper)}
-        >
-          {data?.map((item: any, index: number) => (
-            <SwiperSlide key={index}>
-              <CardItem item={item} />
-            </SwiperSlide>
-          ))}
-        </SwiperReact>
+        {!isLoading ? (
+          <SwiperReact
+            ref={swiperRef as any}
+            slidesPerView={5}
+            speed={500}
+            spaceBetween={20}
+            navigation={{
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: true,
+            }}
+            onSwiper={(swiper) => (swiperRef.current = swiper)}
+          >
+            {data?.map((item: any, index: number) => (
+              <SwiperSlide key={index}>
+                <CardItem item={item} />
+              </SwiperSlide>
+            ))}
+          </SwiperReact>
+        ) : (
+          <div className="flex gap-5">{renderSkeletons()}</div>
+        )}
       </div>
     </div>
   );
 };
 
 export default CardSlider;
+const renderSkeletons = () => {
+  return Array.from({ length: 5 }, (_, index) => (
+    <div key={index} className="w-full">
+      <Skeleton className="rounded-lg">
+        <div className="h-56 rounded-lg bg-default-300"></div>
+      </Skeleton>
+    </div>
+  ));
+};

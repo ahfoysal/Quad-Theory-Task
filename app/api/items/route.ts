@@ -29,7 +29,7 @@ const items = {
       Id: "39487b87-09e0-4e6c-acfa-6ac907e0742a",
       Name: "Fried Rice",
       Price: 9.0,
-      ImageUrl: "https://i.imgur.com/O0YSuFI.jpg",
+      ImageUrl: "https://i.imgur.com/O0YSuFI.jpg  ",
       IsPopular: true,
       IsRecommended: false,
     },
