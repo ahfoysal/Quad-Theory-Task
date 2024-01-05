@@ -13,8 +13,11 @@ import { Checkbox } from "@nextui-org/checkbox";
 import Form from "../forms/Form";
 import { SubmitHandler } from "react-hook-form";
 import FormInput from "../forms/FormInput";
+import { yupResolver } from "@hookform/resolvers/yup";
+
 import FormTextArea from "../forms/FormTextArea";
 import FormCheckBox from "../forms/FormCheckBox";
+import { ItemSchema } from "@/schemas/Item";
 type FormValues = {
   email: string;
   password: string;
@@ -40,7 +43,7 @@ export default function AddItem() {
             <>
               <Form
                 submitHandler={onSubmit as SubmitHandler<any>}
-                resolver={yupResolver(LoginSchema)}
+                resolver={yupResolver(ItemSchema)}
               >
                 <ModalHeader className="flex flex-col gap-1">
                   Add Item

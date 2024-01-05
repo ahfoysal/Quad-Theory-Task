@@ -40,6 +40,7 @@ const FormInput = ({
         render={({ field }) => (
           <Input
             type={type}
+            isInvalid={errorMessage ? true : false}
             label={label}
             errorMessage={errorMessage ? errorMessage : ""}
             size={size}

@@ -53,7 +53,11 @@ const FormCheckBox = ({
           //   options={options}
           //   size={size}
           // />
-          <Checkbox onChange={onChange} value={value} defaultSelected>
+          <Checkbox
+            value={value ? value : false}
+            defaultChecked={false}
+            onChange={onChange}
+          >
             {label}
           </Checkbox>
         )}

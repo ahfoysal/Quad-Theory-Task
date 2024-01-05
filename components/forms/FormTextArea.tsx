@@ -38,6 +38,7 @@ const FormTextArea = ({
         render={({ field }) => (
           <Textarea
             size={size}
+            isInvalid={errorMessage ? true : false}
             errorMessage={errorMessage ? errorMessage : ""}
             placeholder={placeholder}
             label={label}
