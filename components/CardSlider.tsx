@@ -37,11 +37,11 @@ const CardSlider = ({
   }
   return (
     <div className="flex flex-col  text-center justify-around ">
-      <div className="flex w-full justify-between">
+      <div className="flex mt-3 w-full justify-between">
         <h1 className="text-xl  font-medium  text-center md:text-left">
           {title}
         </h1>
-        <div className="mt-5 md:my-0  gap-3 flex ">
+        <div className=" md:my-0  gap-0 flex ">
           <Button
             variant="flat"
             isIconOnly
@@ -66,7 +66,7 @@ const CardSlider = ({
           </Button>
         </div>
       </div>
-      <div className="mt-5">
+      <div className="mt-2">
         <SwiperReact
           ref={swiperRef as any}
           slidesPerView={5}
