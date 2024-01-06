@@ -13,8 +13,11 @@ export default function NavbarDropMenu() {
       classNames={{
         selectorIcon: "text-orange",
         popoverContent: " data-[hover=true]:text-orange",
+        trigger: "text-xs",
+        label: "text-xs",
+        value: "text-xs md:text-sm",
       }}
-      className="min-w-unit-5xl"
+      className="min-w-[100px] md:min-w-unit-5xl"
     >
       {siteConfig.navItems.map((menu) => (
         <SelectItem key={menu.href} value={menu.href}>

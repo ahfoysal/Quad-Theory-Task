@@ -28,14 +28,14 @@ export const Navbar = () => {
       aria-label="Search"
       classNames={{
         inputWrapper: "w-full bg-default-100",
-        input: "text-sm",
+        input: "text-xs md:text-sm",
       }}
       size="lg"
-      className="min-w-[600px]"
+      className="min-w-[150px] md:min-w-[600px]"
       labelPlacement="outside"
       placeholder="Search Audiobook..."
       startContent={
-        <SearchIcon className="text-base text-orange pointer-events-none flex-shrink-0" />
+        <SearchIcon className="text-xs md:text-base text-orange pointer-events-none flex-shrink-0" />
       }
       type="search"
     />
@@ -51,23 +51,20 @@ export const Navbar = () => {
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
-            <p className="font-bold text-4xl font-arlon">
+            <p className="font-bold text-2xl md:text-4xl font-arlon">
               pti<span className="font-merry">.</span>{" "}
             </p>
           </NextLink>
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent
-        className="hidden sm:flex basis-1/5 sm:basis-full"
-        justify="center"
-      >
-        <NavbarItem className="hidden lg:flex ">{searchInput}</NavbarItem>
-        <NavbarItem className="hidden  lg:flex">
+      <NavbarContent className="flex basis-1/5 sm:basis-full" justify="center">
+        <NavbarItem className="flex ">{searchInput}</NavbarItem>
+        <NavbarItem className="flex">
           <NavbarDropMenu />
         </NavbarItem>
       </NavbarContent>
-      <NavbarContent
+      {/* <NavbarContent
         className="hidden sm:flex basis-1/5 sm:basis-full"
         justify="end"
       >
@@ -124,7 +121,7 @@ export const Navbar = () => {
             </NavbarMenuItem>
           ))}
         </div>
-      </NavbarMenu>
+      </NavbarMenu> */}
     </NextUINavbar>
   );
 };
