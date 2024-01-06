@@ -74,7 +74,6 @@ const CardSlider = ({
           <SwiperReact
             ref={swiperRef as any}
             speed={500}
-            spaceBetween={20}
             navigation={{
               nextEl: ".swiper-button-next",
               prevEl: ".swiper-button-prev",
@@ -82,18 +81,23 @@ const CardSlider = ({
             breakpoints={{
               300: {
                 slidesPerView: 1.5,
+                spaceBetween: 10,
               },
-              499: {
+              350: {
                 slidesPerView: 2.3,
+                spaceBetween: 10,
               },
               767: {
                 slidesPerView: 3,
+                spaceBetween: 10,
               },
               1023: {
                 slidesPerView: 4,
+                spaceBetween: 20,
               },
               1200: {
                 slidesPerView: 5,
+                spaceBetween: 20,
               },
             }}
             autoplay={{

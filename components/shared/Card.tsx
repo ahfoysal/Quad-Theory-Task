@@ -4,12 +4,7 @@ import { SwiperSlide } from "swiper/react";
 
 const CardItem = ({ item }: { item: any }) => {
   return (
-    <Card
-      shadow="sm"
-      isPressable
-      className="bg-transparent shadow-none border-none"
-      onPress={() => console.log("item pressed")}
-    >
+    <Card shadow="sm" className="bg-transparent shadow-none border-none">
       <CardBody className="bg-transparent overflow-visible p-0">
         <Image
           shadow="sm"

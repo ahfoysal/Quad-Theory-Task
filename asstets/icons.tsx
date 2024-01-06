@@ -187,8 +187,8 @@ export const SearchIcon = (props: IconSvgProps) => (
 export const LeftIcon = (props: IconSvgProps) => (
   <svg
     fill="currentColor"
-    width={"50"}
-    height={"50"}
+    width={"20"}
+    height={"20"}
     {...props}
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
