@@ -1,10 +1,17 @@
-# Next.js & NextUI Template
+# Quad Theory Task
 
-This is a template for creating applications using Next.js 13 (app directory) and NextUI (v2).
+A Food Listing App using Next.js 14 (app directory), Typescript, Redux Toolkit and NextUI (v2)
+
+## Live Link
+
+📝 **[Explore Pti.](https://pti-quad-theory.vercel.app/)**
 
 ## Technologies Used
 
 - [Next.js 13](https://nextjs.org/docs/getting-started)
+- [React Hook Form](https://react-hook-form.com)
+- [Redux Toolkit](https://redux-toolkit.js.org)
+- [Swiper.js](https://swiperjs.com/swiper-api)
 - [NextUI v2](https://nextui.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Tailwind Variants](https://tailwind-variants.org)
@@ -13,15 +20,6 @@ This is a template for creating applications using Next.js 13 (app directory) an
 - [next-themes](https://github.com/pacocoursey/next-themes)
 
 ## How to Use
-
-
-### Use the template with create-next-app
-
-To create a new project based on this template using `create-next-app`, run the following command:
-
-```bash
-npx create-next-app -e https://github.com/nextui-org/next-app-template
-```
 
 ### Install dependencies
 
@@ -34,7 +32,3 @@ npm install
 ```bash
 npm run dev
 ```
-
-## License
-
-Licensed under the [MIT license](https://github.com/nextui-org/next-app-template/blob/main/LICENSE).
