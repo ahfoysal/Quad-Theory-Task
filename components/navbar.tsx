@@ -31,7 +31,7 @@ export const Navbar = () => {
         input: "text-xs md:text-sm",
       }}
       size="lg"
-      className="min-w-[150px] md:min-w-[600px]"
+      className="min-w-[130px] sm:min-w-[200px] md:min-w-[500px] lg:min-w-[600px]"
       labelPlacement="outside"
       placeholder="Search Audiobook..."
       startContent={
@@ -44,7 +44,7 @@ export const Navbar = () => {
   return (
     <NextUINavbar
       height={"80px"}
-      className="bg-transparent"
+      className="bg-transparent overflow-hidden"
       maxWidth="xl"
       position="sticky"
     >
@@ -60,11 +60,11 @@ export const Navbar = () => {
 
       <NavbarContent className="flex basis-1/5 sm:basis-full" justify="center">
         <NavbarItem className="flex ">{searchInput}</NavbarItem>
-        <NavbarItem className="flex">
+        <NavbarItem className="">
           <NavbarDropMenu />
         </NavbarItem>
       </NavbarContent>
-      {/* <NavbarContent
+      <NavbarContent
         className="hidden sm:flex basis-1/5 sm:basis-full"
         justify="end"
       >
@@ -84,44 +84,6 @@ export const Navbar = () => {
           <ThemeSwitch />
         </NavbarItem>
       </NavbarContent>
-
-      <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <Button
-          isExternal
-          as={Link}
-          className="text-sm  font-normal text-white bg-orange "
-          variant="flat"
-          isIconOnly
-          radius="full"
-        >
-          <Icons.userIcon />
-        </Button>
-        <ThemeSwitch />
-        <NavbarMenuToggle />
-      </NavbarContent>
-
-      <NavbarMenu>
-        {searchInput}
-        <div className="mx-4 mt-2 flex flex-col gap-2">
-          {siteConfig.navMenuItems.map((item, index) => (
-            <NavbarMenuItem key={`${item}-${index}`}>
-              <Link
-                color={
-                  index === 2
-                    ? "primary"
-                    : index === siteConfig.navMenuItems.length - 1
-                    ? "danger"
-                    : "foreground"
-                }
-                href="#"
-                size="lg"
-              >
-                {item.label}
-              </Link>
-            </NavbarMenuItem>
-          ))}
-        </div>
-      </NavbarMenu> */}
     </NextUINavbar>
   );
 };

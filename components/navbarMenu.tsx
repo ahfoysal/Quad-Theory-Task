@@ -12,10 +12,10 @@ export default function NavbarDropMenu() {
       size="sm"
       classNames={{
         selectorIcon: "text-orange",
-        popoverContent: " data-[hover=true]:text-orange",
+        popoverContent: " data-[active=true]:text-orange",
         trigger: "text-xs",
         label: "text-xs",
-        value: "text-xs md:text-sm",
+        value: "text-xs md:text-sm dark:text-white text-black font-medium",
       }}
       className="min-w-[100px] md:min-w-unit-5xl"
     >
