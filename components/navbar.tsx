@@ -31,7 +31,7 @@ export const Navbar = () => {
         input: "text-xs md:text-sm",
       }}
       size="lg"
-      className="min-w-[130px] sm:min-w-[200px] md:min-w-[500px] lg:min-w-[600px]"
+      className="min-w-[130px] sm:min-w-[200px] md:min-w-[400px] lg:min-w-[600px]"
       labelPlacement="outside"
       placeholder="Search Audiobook..."
       startContent={
