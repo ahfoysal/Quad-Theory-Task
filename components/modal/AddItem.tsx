@@ -18,6 +18,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import FormTextArea from "../forms/FormTextArea";
 import FormCheckBox from "../forms/FormCheckBox";
 import { ItemSchema } from "@/schemas/Item";
+import UploadImage from "../forms/UploadImage";
 type FormValues = {
   email: string;
   password: string;
@@ -50,6 +51,7 @@ export default function AddItem() {
                 </ModalHeader>
                 <ModalBody>
                   <div className="flex flex-col gap-4">
+                    <UploadImage name="imageUrl" />
                     <FormInput label="Name" type="text" name="name" />
                     <FormInput label="Price" type="number" name="price" />
                     <FormTextArea label="Description" name="description" />
